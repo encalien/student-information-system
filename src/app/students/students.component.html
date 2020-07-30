@@ -1,0 +1,24 @@
+<h3>Listing All Students</h3>
+
+<table>
+    <tr>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Student ID </th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let student of students">
+        <td>{{student.lastName}}</td>
+        <td>{{student.firstName}}</td>
+        <td>{{student.studentId}}</td>
+        <td>
+            <a routerLink="/student/{{student.studentId}}">View</a>
+        </td>
+    </tr>
+</table>
+
+<app-student-detail [student]="selectedStudent" *ngIf="selectedStudent"></app-student-detail>
+
+<!-- 
+(click)="onSelect(student)"
+        [class.selected]="student === selectedStudent" -->
