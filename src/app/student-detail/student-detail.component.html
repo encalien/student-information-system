@@ -1,0 +1,29 @@
+<div>
+    <h3>{{student.lastName | uppercase}}, {{student.firstName}}</h3>
+    <p>Student ID: {{student.studentId}}</p>
+    <p>Date of Birth: {{student.dateOfBirth}}</p>
+    <p>Enrolled in year: {{student.studyYear}}</p>
+    <p>Enrolled in Courses: {{student.enrolledCourses}}</p>
+
+    <div>
+        <label>Available Courses:
+            <select [(ngModel)]="student.enrolledCourses" multiple>
+                <option value="Anatomy">Anatomy</option>
+                <option value="Cell Biology">Cell Biology</option>
+                <option value="Statistics">Statistics</option>
+                <option value="Computer Science 101">Computer Science 101</option>
+                <option value="Programming Practicum">Programming Practicum</option>
+            </select>
+        </label>
+    </div>
+    <button pButton (click)="goBack()" type="button" label="Go Back" class="ui-button-secondary"></button>
+</div>
+
+<!-- For reference -->
+
+<!-- How to add a 2-way binding with ngModel -->
+<!-- <div>
+    <label>name:
+        <input [(ngModel)]="student.firstName" placeholder="name"/>
+    </label>
+</div> -->
