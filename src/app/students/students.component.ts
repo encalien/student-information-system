@@ -1,30 +1,70 @@
 import { Component, OnInit } from '@angular/core';
 import { Student } from '../student';
 import { StudentService } from '../student.service';
+import { LazyLoadEvent } from 'primeng/api'; 
 
 @Component({
   selector: 'app-students',
   templateUrl: './students.component.html',
-  styleUrls: ['./students.component.css']
+  styleUrls: ['./students.component.scss']
 })
 
 export class StudentsComponent implements OnInit {
-  students: Student[];
+  allStudents: Student[];
+  listedStudents: Student[];
+  totalRecords: number;
+  columns: any[];
+  loading: boolean;
+
   selectedStudent: Student;
   
   constructor(private studentService: StudentService) { }
   
   ngOnInit(): void {
     this.getStudents();
+    this.defineColumns();
+    this.loading = true;
   }
 
   getStudents(): void {
     this.studentService.getStudents()
-      .subscribe(students => this.students = students);
+      .subscribe(students => {
+        this.allStudents = students;
+        this.totalRecords = students.length;
+      });
   }
-  
+
+  defineColumns(): void {
+    this.columns = [
+      { field: 'studentId', header: 'Student ID' },
+      { field: 'firstName', header: 'First Name' },
+      { field: 'lastName', header: 'Last Name' },
+      { field: 'studyYear', header: 'School Year' },
+    ];
+  }
+
+  lazyLoadStudents(event: LazyLoadEvent): void {
+    this.loading = true;
+
+    //in a real application, make a remote request to load data using state metadata from event
+    //event.first = First row offset
+    //event.rows = Number of rows per page
+    //event.sortField = Field name to sort with
+    //event.sortOrder = Sort order as number, 1 for asc and -1 for dec
+    //filters: FilterMetadata object having field as key and filter value, filter matchMode as value
+
+    //imitate db connection over a network
+    setTimeout(() => {
+      if (this.allStudents) {
+          this.listedStudents = this.allStudents.slice(event.first, (event.first + event.rows));
+          this.loading = false;
+      }
+    }, 1000);  
+  }
+    
   onSelect(student: Student): void {
     this.selectedStudent = student;
-    console.log(this.selectedStudent)
+    console.log(this.selectedStudent);
   }
 }
+  
