@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { StudentDetailComponent }  from './student-detail/student-detail.component';
+import { StudentFormComponent }  from './components/student-form/student-form.component';
+import { StudentDetailComponent }  from './components/student-detail/student-detail.component';
 
 const routes: Routes = [
   { 
     path: 'overview',
-    loadChildren: () => import('./students/students.module').then(m => m.StudentsModule)
+    loadChildren: () => import('./components/students/students.module').then(m => m.StudentsModule)
   },
-  { path: 'student/:studentId', component: StudentDetailComponent },
+  { path: 'students/new', component: StudentFormComponent },
+  { path: 'students/:studentId', component: StudentDetailComponent },
   { path: '', redirectTo: '/overview', pathMatch: 'full' },
 ];
 

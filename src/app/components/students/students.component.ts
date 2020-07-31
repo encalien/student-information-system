@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Student } from '../student';
-import { StudentService } from '../student.service';
+import { Student } from '../../models/student';
+import { StudentService } from '../../student.service';
 import { LazyLoadEvent } from 'primeng/api'; 
 
 @Component({
