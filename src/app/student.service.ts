@@ -15,7 +15,7 @@ export class StudentService {
     return of(STUDENTS);
   }
 
-  getStudent(studentId: number): Observable<Student> {
+  getStudent(studentId: string): Observable<Student> {
     // TODO: send the message _after_ fetching the Student
     // this.messageService.add(`StudentService: fetched Student id=${id}`);
     console.log(studentId)
