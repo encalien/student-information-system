@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StudentFormComponent }  from './components/student-form/student-form.component';
 import { StudentDetailComponent }  from './components/student-detail/student-detail.component';
+import { LoginComponent }  from './components/login/login.component';
 
 const routes: Routes = [
   { 
@@ -10,7 +11,8 @@ const routes: Routes = [
   },
   { path: 'students/new', component: StudentFormComponent },
   { path: 'students/:studentId', component: StudentDetailComponent },
-  { path: '', redirectTo: '/overview', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: '/overview', pathMatch: 'full' }
 ];
 
 @NgModule({
