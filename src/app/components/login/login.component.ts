@@ -3,7 +3,6 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/authentication.service'
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,7 +15,12 @@ export class LoginComponent implements OnInit {
     password: new FormControl("")
   })
 
-  constructor(private router: Router, private authService: AuthenticationService) { }
+  constructor(private router: Router, private authService: AuthenticationService) {
+      if (authService.isLoggedIn()) {
+        router.navigate(['overview']);
+      }
+
+  }
 
   ngOnInit(): void {
 
