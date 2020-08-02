@@ -1,0 +1,316 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "firstName": "Anomen",
+      "lastName": "Delryn",
+      "dateOfBirth": "01.01.1990",
+      "studentNumber": "440437003",
+      "studyYear": "1",
+      "enrolledCourseIds": [
+        "1",
+        "3"
+      ]
+    },
+    {
+      "id": "2",
+      "firstName": "Ajantis",
+      "lastName": "Ilvastarr",
+      "dateOfBirth": "12.02.1987",
+      "studentNumber": "440438002",
+      "studyYear": "1",
+      "enrolledCourseIds": [
+        "1",
+        "3"
+      ]
+    },
+    {
+      "id": "3",
+      "firstName": "Edwin",
+      "lastName": "Odesseiron",
+      "dateOfBirth": "12.02.1987",
+      "studentNumber": "440439001",
+      "studyYear": "1",
+      "enrolledCourseIds": [
+        "1",
+        "3"
+      ]
+    },
+    {
+      "id": "4",
+      "firstName": "Ifan",
+      "lastName": "ben-Mezd",
+      "dateOfBirth": "12.03.1992",
+      "studentNumber": "440440000",
+      "studyYear": "1",
+      "enrolledCourseIds": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "id": "5",
+      "firstName": "Jon",
+      "lastName": "Irenicus",
+      "dateOfBirth": "15.03.1992",
+      "studentNumber": "441064377",
+      "studyYear": "2",
+      "enrolledCourseIds": [
+        "1",
+        "2",
+        "4"
+      ]
+    },
+    {
+      "id": "6",
+      "firstName": "Jierdan",
+      "lastName": "Firkraag",
+      "dateOfBirth": "05.05.1992",
+      "studentNumber": "441208233",
+      "studyYear": "2",
+      "enrolledCourseIds": [
+        "2",
+        "4"
+      ]
+    },
+    {
+      "id": "7",
+      "firstName": "Keldorn",
+      "lastName": "Firecam",
+      "dateOfBirth": "15.05.1987",
+      "studentNumber": "441297144",
+      "studyYear": "2",
+      "enrolledCourseIds": [
+        "2",
+        "4"
+      ]
+    },
+    {
+      "id": "8",
+      "firstName": "Korgan",
+      "lastName": "Bloodaxe",
+      "dateOfBirth": "08.05.1987",
+      "studentNumber": "441352089",
+      "studyYear": "2",
+      "enrolledCourseIds": [
+        "2",
+        "4"
+      ]
+    },
+    {
+      "id": "9",
+      "firstName": "Marcus",
+      "lastName": "Miller",
+      "dateOfBirth": "08.05.1991",
+      "studentNumber": "441386055",
+      "studyYear": "3",
+      "enrolledCourseIds": [
+        "2",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "id": "10",
+      "firstName": "Mazzy",
+      "lastName": "Fentan",
+      "dateOfBirth": "09.01.1991",
+      "studentNumber": "441407034",
+      "studyYear": "3",
+      "enrolledCourseIds": [
+        "3",
+        "5"
+      ]
+    },
+    {
+      "id": "11",
+      "firstName": "Nalia",
+      "lastName": "de'Arnise",
+      "dateOfBirth": "19.07.1991",
+      "studentNumber": "441420021",
+      "studyYear": "3",
+      "enrolledCourseIds": [
+        "3",
+        "5"
+      ]
+    },
+    {
+      "id": "12",
+      "firstName": "Raelis",
+      "lastName": "Shai",
+      "dateOfBirth": "19.07.1987",
+      "studentNumber": "441428013",
+      "studyYear": "3",
+      "enrolledCourseIds": [
+        "3",
+        "4"
+      ]
+    },
+    {
+      "id": "13",
+      "firstName": "Sarevok",
+      "lastName": "Anchev",
+      "dateOfBirth": "30.07.1984",
+      "studentNumber": "441433008",
+      "studyYear": "4",
+      "enrolledCourseIds": [
+        "3",
+        "4"
+      ]
+    },
+    {
+      "id": "14",
+      "firstName": "Saemon",
+      "lastName": "Havarian",
+      "dateOfBirth": "31.08.1983",
+      "studentNumber": "441436005",
+      "studyYear": "4",
+      "enrolledCourseIds": [
+        "3",
+        "4"
+      ]
+    },
+    {
+      "id": "15",
+      "firstName": "Sebille",
+      "lastName": "Kaleran",
+      "dateOfBirth": "20.08.1983",
+      "studentNumber": "441438003",
+      "studyYear": "4",
+      "enrolledCourseIds": [
+        "3",
+        "4"
+      ]
+    },
+    {
+      "id": "16",
+      "firstName": "Valygar",
+      "lastName": "Corthala",
+      "dateOfBirth": "21.09.1987",
+      "studentNumber": "441439002",
+      "studyYear": "4",
+      "enrolledCourseIds": [
+        "3",
+        "5"
+      ]
+    },
+    {
+      "id": "17",
+      "firstName": "Viconia",
+      "lastName": "DeVir",
+      "dateOfBirth": "29.10.1987",
+      "studentNumber": "441440001",
+      "studyYear": "4",
+      "enrolledCourseIds": [
+        "3",
+        "5"
+      ]
+    },
+    {
+      "id": "18",
+      "firstName": "Yeslick",
+      "lastName": "Orothiar",
+      "dateOfBirth": "03.11.1984",
+      "studentNumber": "441441000",
+      "studyYear": "4",
+      "enrolledCourseIds": [
+        "4",
+        "5"
+      ]
+    },
+    {
+      "id": "19",
+      "firstName": "Drizzt",
+      "lastName": "Do'Urden",
+      "dateOfBirth": "03.01.1986",
+      "studentNumber": "442065377",
+      "studyYear": "4",
+      "enrolledCourseIds": [
+        "4",
+        "2"
+      ]
+    },
+    {
+      "id": "20",
+      "firstName": "Aldeth",
+      "lastName": "Sashenstar",
+      "dateOfBirth": "03.12.1982",
+      "studentNumber": "442209233",
+      "studyYear": "4",
+      "enrolledCourseIds": [
+        "4",
+        "3"
+      ]
+    },
+    {
+      "id": "21",
+      "firstName": "Alan",
+      "lastName": "Blackblade",
+      "dateOfBirth": "12.10.1984",
+      "studentNumber": "442298144",
+      "studyYear": "4",
+      "enrolledCourseIds": [
+        "4",
+        "3"
+      ]
+    },
+    {
+      "id": "22",
+      "firstName": "Elminster",
+      "lastName": "Aumar",
+      "dateOfBirth": "06.11.1984",
+      "studentNumber": "442353089",
+      "studyYear": "4",
+      "enrolledCourseIds": [
+        "2",
+        "3"
+      ]
+    },
+    {
+      "id": "23",
+      "firstName": "Entar",
+      "lastName": "Silvershield",
+      "dateOfBirth": "03.12.1988",
+      "studentNumber": "442387055",
+      "studyYear": "3",
+      "enrolledCourseIds": [
+        "1",
+        "3",
+        "4"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "email": "testuser1@email.com"
+    },
+    {
+      "id": "2",
+      "email": "testuser2@email.com"
+    }
+  ],
+  "courses": [
+    {
+      "id": "1",
+      "name": "Computer Science 101"
+    },
+    {
+      "id": "2",
+      "name": "Intro to Databases"
+    },
+    {
+      "id": "3",
+      "name": "Algorithms and Data Types"
+    },
+    {
+      "id": "4",
+      "name": "Programming Practicum"
+    },
+    {
+      "id": "5",
+      "name": "Machine Learning"
+    }
+  ]
+}

@@ -32,10 +32,15 @@ export class LoginComponent implements OnInit {
     console.log("logging in with email: " + email + " and password: " + password);
 
     if (email && password) {
-      this.authService.authenticate(email, password)
-        .subscribe(
-          (user) => { if (user) { this.router.navigate(["/overview"]) } }
-        );
+      this.authService.fetchUser(email).subscribe(
+        (foundUsers) => { 
+          let user = foundUsers[0];
+          if (user) { 
+            this.authService.setSession(user);
+            this.router.navigate(["/overview"]) 
+          } 
+        }
+      );
     }
   }
 }

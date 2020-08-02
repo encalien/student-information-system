@@ -1,10 +1,11 @@
 export class Student {
   constructor(
+    public id: string,
     public firstName: string,
     public lastName: string,
     public dateOfBirth: string,
-    public studentId: string,
+    public studentNumber: string,
     public studyYear: number,
-    public enrolledCourses: string[]  
+    public enrolledCourseIds: string[]  
   ) { }
 }

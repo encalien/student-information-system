@@ -37,7 +37,7 @@ export class StudentsComponent implements OnInit {
   }
 
   getStudents(): void {
-    this.studentService.getStudents()
+    this.studentService.fetchStudents()
       .subscribe(students => {
         this.allStudents = students;
         this.totalRecords = students.length;
@@ -46,7 +46,7 @@ export class StudentsComponent implements OnInit {
 
   defineColumns(): void {
     this.columns = [
-      { field: 'studentId', header: 'Student ID' },
+      { field: 'studentNumber', header: 'Student ID' },
       { field: 'firstName', header: 'First Name' },
       { field: 'lastName', header: 'Last Name' },
       { field: 'studyYear', header: 'School Year' },
@@ -74,7 +74,7 @@ export class StudentsComponent implements OnInit {
     
   onSelect(student: Student): void {
     this.selectedStudent = student;
-    this.router.navigate(['./students/' + this.selectedStudent.studentId]);
+    this.router.navigate(['./students/' + this.selectedStudent.id]);
   }
 }
   

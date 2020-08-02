@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { User } from '../models/user';
-import { USERS } from '../models/mock-users';
+import { HttpClient } from '@angular/common/http';
 import * as moment from "moment";
 
 @Injectable({
@@ -10,21 +10,16 @@ import * as moment from "moment";
 export class AuthenticationService {
   expiryTime: number = 3600;
 
-  constructor() { // private http: HttpClient
+  ROOT_URL = "http://localhost:3000";
+
+  constructor(private http: HttpClient) { // private http: HttpClient
   }
 
-  authenticate(email:string, password:string): Observable<User | null> {
-    console.log("looking for user");
-    let user = USERS.find(user => user.email === email && user.password === password);
-    if (user) { this.setSession(user) };
-    return of(user || null);
-
-    // return this.http.post<User>('/api/login', {email, password})
-    //   .do(res => this.setSession) 
-    //   .shareReplay();
+  fetchUser(email:string) {
+    return this.http.get(this.ROOT_URL + "/users/?email=" + email);
   }
-        
-  private setSession(user: User): void {
+
+  setSession(user: User): void {
     let expiresAt = moment().add(this.expiryTime, "second");
     let currentSession = {
       "current_user": user,

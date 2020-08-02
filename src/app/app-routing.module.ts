@@ -10,7 +10,7 @@ const routes: Routes = [
     loadChildren: () => import('./components/students/students.module').then(m => m.StudentsModule)
   },
   { path: 'students/new', component: StudentFormComponent },
-  { path: 'students/:studentId', component: StudentDetailComponent },
+  { path: 'students/:id', component: StudentDetailComponent },
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/overview', pathMatch: 'full' }
 ];

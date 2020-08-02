@@ -1,22 +1,22 @@
-<div class="title">
-    <h3>{{student.lastName | uppercase}}, {{student.firstName}}</h3>
-    <p-button label="Go Back" (click)="goBack()" styleClass="ui-button-secondary"></p-button>
-</div>
-<div>
-    <p>Student ID: {{student.studentId}}</p>
-    <p>Date of Birth: {{student.dateOfBirth}}</p>
-    <p>Enrolled in year: {{student.studyYear}}</p>
-    <p>Enrolled in Courses:</p>
-    <ul>
-        <li *ngFor="let course of enrolledCourses">{{course.name}}</li>
-    </ul>
-    <p-listbox 
-        [options]="availableCourses" 
-        [(ngModel)]="enrolledCourses" 
-        [multiple]="true" 
-        [checkbox]="true" 
-        [filter]="true" 
-        optionLabel="name"
-        class="full-width">
-    </p-listbox>
+<div *ngIf="student">
+    <div class="title">
+        <h3>{{student.lastName | uppercase}}, {{student.firstName}}</h3>
+        <p-button label="Go Back" (click)="goBack()" styleClass="ui-button-secondary"></p-button>
+    </div>
+    <div>
+        <p>Student ID: {{student.studentNumber}}</p>
+        <p>Date of Birth: {{student.dateOfBirth}}</p>
+        <p>Enrolled in year: {{student.studyYear}}</p>
+        <p>Enrolled in Courses:</p>
+        <p-listbox 
+            [options]="availableCourses" 
+            [(ngModel)]="enrolledCourses" 
+            [multiple]="true" 
+            [checkbox]="true" 
+            [filter]="true" 
+            optionLabel="name"
+            class="full-width form-group">
+        </p-listbox>
+    </div>
+    <p-button label="Delete Student" (click)="deleteStudent()" styleClass="ui-button-danger"></p-button>
 </div>

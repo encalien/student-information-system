@@ -4,7 +4,7 @@
 </div>
 
 <p-table id="students-table" [columns]="columns" [value]="listedStudents" [lazy]="true" (onLazyLoad)="lazyLoadStudents($event)" [paginator]="true" 
-    [rows]="10" [totalRecords]="totalRecords" [loading]="loading">
+    [rows]="20" [totalRecords]="totalRecords" [loading]="loading">
     <ng-template pTemplate="header" let-columns>
         <tr>
             <th *ngFor="let col of columns">

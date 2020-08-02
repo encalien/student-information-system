@@ -4,10 +4,10 @@
 </div>
 <div class="row form-group">
     <div class="col-md-6">
-        <input type="text" pInputText [(ngModel)]="firstName" placeholder="First Name" class="full-width"/>
+        <input type="text" pInputText [(ngModel)]="firstName" placeholder="First Name" required class="full-width"/>
     </div>
     <div class="col-md-6">
-        <input type="text" pInputText [(ngModel)]="lastName" placeholder="Last Name" class="full-width"/>
+        <input type="text" pInputText [(ngModel)]="lastName" placeholder="Last Name" required class="full-width"/>
     </div>
 </div>
 <div class="row form-group">
@@ -19,6 +19,7 @@
             [checkbox]="true" 
             [filter]="true" 
             optionLabel="name"
+            required
             class="full-width">
         </p-listbox>
     </div>
@@ -28,6 +29,7 @@
             min="1" 
             max="4" 
             placeholder="Study Year" 
+            required 
             class="full-width">
         </p-inputNumber>
     </div>
@@ -37,6 +39,7 @@
             [(ngModel)]="dateOfBirth" 
             placeholder="Date of Birth" 
             slotChar="dd.mm.yyyy"
+            required 
             class="full-width">
         </p-inputMask>
     </div>
