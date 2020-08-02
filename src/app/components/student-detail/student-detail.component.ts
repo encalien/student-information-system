@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { StudentService }  from '../../student.service';
+import { StudentService }  from 'src/app/services/student.service';
 import { Student } from '../../models/student';
 import { SelectItem } from 'primeng/api';
 import { Router } from '@angular/router';
-import { AuthenticationService } from 'src/app/authentication.service'
+import { AuthenticationService } from 'src/app/services/authentication.service'
 
 interface Course {
   name: string,
@@ -32,10 +32,6 @@ export class StudentDetailComponent implements OnInit {
     private location: Location,
     private authService: AuthenticationService,
     private router: Router) {
-      if (!authService.isLoggedIn()) {
-        router.navigate(['login']);
-      }
-
       this.courses = [
         { label: "Computer Science 101", value: {name: "Computer Science 101", code: 'CS101', year: 1} },
         { label: "Intro to Databases", value: {name: "Intro to Databases", code: 'ID', year: 2} },
@@ -45,9 +41,11 @@ export class StudentDetailComponent implements OnInit {
       ];
   }
 
-  
-
   ngOnInit(): void {
+    if (!this.authService.isLoggedIn()) {
+      this.router.navigate(['login']);
+    }
+
     this.getStudent();
   }
   

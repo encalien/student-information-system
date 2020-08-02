@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Student } from './models/student';
-import { STUDENTS } from './models/mock-students';
+import { Student } from '../models/student';
+import { STUDENTS } from '../models/mock-students';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +16,6 @@ export class StudentService {
   }
 
   getStudent(studentId: string): Observable<Student> {
-    // TODO: send the message _after_ fetching the Student
-    // this.messageService.add(`StudentService: fetched Student id=${id}`);
     console.log(studentId)
     return of(STUDENTS.find(student => student.studentId === studentId));
   }

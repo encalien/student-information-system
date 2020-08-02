@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Student } from '../../models/student';
-import { StudentService } from '../../student.service';
+import { StudentService } from 'src/app/services/student.service';
 import { LazyLoadEvent } from 'primeng/api'; 
 import { Router } from '@angular/router';
-import { AuthenticationService } from 'src/app/authentication.service'
+import { AuthenticationService } from 'src/app/services/authentication.service'
 
 @Component({
   selector: 'app-students',
@@ -24,12 +24,13 @@ export class StudentsComponent implements OnInit {
     private studentService: StudentService,
     private authService: AuthenticationService,
     private router: Router) {
-      if (!authService.isLoggedIn()) {
-        router.navigate(['login']);
-      }
   }
   
   ngOnInit(): void {
+    if (!this.authService.isLoggedIn()) {
+      this.router.navigate(['login']);
+    }
+
     this.getStudents();
     this.defineColumns();
     this.loading = true;

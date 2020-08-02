@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthenticationService } from 'src/app/authentication.service'
+import { AuthenticationService } from 'src/app/services/authentication.service'
 
 @Component({
   selector: 'app-login',
@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit {
       if (authService.isLoggedIn()) {
         router.navigate(['overview']);
       }
-
   }
 
   ngOnInit(): void {
@@ -35,41 +34,8 @@ export class LoginComponent implements OnInit {
     if (email && password) {
       this.authService.authenticate(email, password)
         .subscribe(
-          (user) => {
-            console.log("User " + user.email + " is logged in");
-            this.router.navigate(["/overview"]);
-          }
+          (user) => { if (user) { this.router.navigate(["/overview"]) } }
         );
     }
-
   }
-
 }
-//
-// export class LoginComponent {
-//     form:FormGroup;
-
-//     constructor(private fb:FormBuilder, 
-//                  private authService: AuthService, 
-//                  private router: Router) {
-
-//         this.form = this.fb.group({
-//             email: ['',Validators.required],
-//             password: ['',Validators.required]
-//         });
-//     }
-
-//     login() {
-//         const val = this.form.value;
-
-//         if (val.email && val.password) {
-//             this.authService.login(val.email, val.password)
-//                 .subscribe(
-//                     () => {
-//                         console.log("User is logged in");
-//                         this.router.navigateByUrl('/');
-//                     }
-//                 );
-//         }
-//     }
-// }

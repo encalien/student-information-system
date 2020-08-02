@@ -1,25 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { User } from './models/user';
-import { USERS } from './models/mock-users';
+import { User } from '../models/user';
+import { USERS } from '../models/mock-users';
 import * as moment from "moment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
-  expiryTime: number = 60;
+  expiryTime: number = 3600;
 
   constructor() { // private http: HttpClient
   }
 
-  authenticate(email:string, password:string): Observable<User> {
+  authenticate(email:string, password:string): Observable<User | null> {
     console.log("looking for user");
     let user = USERS.find(user => user.email === email && user.password === password);
-    if (user) {
-      this.setSession(user);
-      return of(user);
-    };
+    if (user) { this.setSession(user) };
+    return of(user || null);
 
     // return this.http.post<User>('/api/login', {email, password})
     //   .do(res => this.setSession) 

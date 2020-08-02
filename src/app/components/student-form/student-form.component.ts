@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Student } from '../../models/student';
 import { Router } from '@angular/router';
-import { AuthenticationService } from 'src/app/authentication.service'
+import { AuthenticationService } from 'src/app/services/authentication.service'
 
 @Component({
   selector: 'app-student-form',
@@ -20,14 +20,13 @@ export class StudentFormComponent implements OnInit {
 
   constructor(
     private authService: AuthenticationService,
-    private router: Router) {
-      if (!authService.isLoggedIn()) {
-        router.navigate(['login']);
-      }
-  }
-
+    private router: Router) { }
 
   ngOnInit(): void {
+    if (!this.authService.isLoggedIn()) {
+      this.router.navigate(['login']);
+    }
+
     this.availableCourses = [
       {name: "Computer Science 101", code: 'CS101', year: 1},
       {name: "Intro to Databases", code: 'ID', year: 2},
