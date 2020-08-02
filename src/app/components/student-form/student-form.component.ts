@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Student } from '../../models/student';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { AuthenticationService } from 'src/app/services/authentication.service'
 
 @Component({
@@ -20,7 +21,8 @@ export class StudentFormComponent implements OnInit {
 
   constructor(
     private authService: AuthenticationService,
-    private router: Router) { }
+    private router: Router,
+    private location: Location) { }
 
   ngOnInit(): void {
     if (!this.authService.isLoggedIn()) {
@@ -46,9 +48,15 @@ export class StudentFormComponent implements OnInit {
     });
   }
 
+  goBack(): void {
+    this.location.back();
+  }
+
   onSubmit(): void {
     this.newStudent = new Student(this.firstName, this.lastName, this.dateOfBirth, this.generateId(), this.studyYear, this.selectedCourses);
     this.submitted = true; 
+
+    // To redirect to the new student page:
     // this.router.navigate(['./students/' + this.newStudent.studentId]);
     console.log(this.newStudent);
   }
@@ -85,7 +93,6 @@ export class StudentFormComponent implements OnInit {
     id = this.addLeadingZero(part1) + this.addLeadingZero(part2) + this.addLeadingZero(part3);
     console.log(id);
     return (id);
-
   }
 
   addLeadingZero(value: number): string {

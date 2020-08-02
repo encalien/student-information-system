@@ -1,6 +1,5 @@
 <div class="title">
     <h3>{{student.lastName | uppercase}}, {{student.firstName}}</h3>
-    <!-- <button pButton (click)="goBack()" type="button" label="Go Back" class="ui-button-secondary"></button> -->
     <p-button label="Go Back" (click)="goBack()" styleClass="ui-button-secondary"></p-button>
 </div>
 <div>
@@ -11,5 +10,13 @@
     <ul>
         <li *ngFor="let course of enrolledCourses">{{course.name}}</li>
     </ul>
-    <p-multiSelect [options]="courses" [(ngModel)]="enrolledCourses"></p-multiSelect>
+    <p-listbox 
+        [options]="availableCourses" 
+        [(ngModel)]="enrolledCourses" 
+        [multiple]="true" 
+        [checkbox]="true" 
+        [filter]="true" 
+        optionLabel="name"
+        class="full-width">
+    </p-listbox>
 </div>

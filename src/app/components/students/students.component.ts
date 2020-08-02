@@ -74,7 +74,7 @@ export class StudentsComponent implements OnInit {
     
   onSelect(student: Student): void {
     this.selectedStudent = student;
-    console.log(this.selectedStudent);
+    this.router.navigate(['./students/' + this.selectedStudent.studentId]);
   }
 }
   

@@ -1,19 +1,52 @@
 <div class="title">
     <h3>Add new student</h3>
-    <!-- <p-button label="Go Back" styleClass="ui-button-secondary"></p-button> -->
+    <p-button label="Go Back" (click)="goBack()" styleClass="ui-button-secondary"></p-button>
 </div>
-<div>
-    <input type="text" pInputText [(ngModel)]="firstName" placeholder="First Name"/>
-    <input type="text" pInputText [(ngModel)]="lastName" placeholder="Last Name"/>
-    <p-inputNumber [(ngModel)]="studyYear" min="1" max="4" placeholder="Study Year"></p-inputNumber>
-    <p-inputMask mask="99.99.9999" [(ngModel)]="dateOfBirth" placeholder="Date of Birth" slotChar="dd.mm.yyyy"></p-inputMask>
-    <p-listbox 
-        [options]="availableCourses" 
-        [(ngModel)]="selectedCourses" 
-        [multiple]="true" 
-        [checkbox]="true" 
-        [filter]="true" 
-        optionLabel="name">
-    </p-listbox>
-    <p-button label="Save" styleClass="ui-button-success" (click)="onSubmit()"></p-button>
+<div class="row form-group">
+    <div class="col-md-6">
+        <input type="text" pInputText [(ngModel)]="firstName" placeholder="First Name" class="full-width"/>
+    </div>
+    <div class="col-md-6">
+        <input type="text" pInputText [(ngModel)]="lastName" placeholder="Last Name" class="full-width"/>
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col-md-6">
+        <p-listbox 
+            [options]="availableCourses" 
+            [(ngModel)]="selectedCourses" 
+            [multiple]="true" 
+            [checkbox]="true" 
+            [filter]="true" 
+            optionLabel="name"
+            class="full-width">
+        </p-listbox>
+    </div>
+    <div class="col-md-2">
+        <p-inputNumber 
+            [(ngModel)]="studyYear" 
+            min="1" 
+            max="4" 
+            placeholder="Study Year" 
+            class="full-width">
+        </p-inputNumber>
+    </div>
+    <div class="col-md-4">
+        <p-inputMask 
+            mask="99.99.9999" 
+            [(ngModel)]="dateOfBirth" 
+            placeholder="Date of Birth" 
+            slotChar="dd.mm.yyyy"
+            class="full-width">
+        </p-inputMask>
+    </div>
+</div>
+<div class="row">
+    <div class="col-auto my-1">
+        <p-button 
+            label="Save" 
+            (click)="onSubmit()"
+            styleClass="ui-button-success">
+        </p-button>
+    </div>
 </div>

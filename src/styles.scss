@@ -2,17 +2,58 @@
 @import '../node_modules/primeng/resources/primeng.min.css';
 @import '../node_modules/primeng/resources/themes/nova-light/theme.css';
 @import '../node_modules/primeicons/primeicons.css';
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+$primary-color: #116fbf;
+$light-color: aliceblue;
 
-h1 {
+h3 {
     text-align: center;
+    margin: 2rem 0;
 }
 
 .title {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.main-content {
+    padding: 2rem 0;
+}
+
+.full-width {
+    display: block;
+    width: 100%;
+
+    input, .ui-listbox, p-button, button {
+        width: 100%;
+    }
+}
+
+body .ui-menubar {
+    background-color: $primary-color;
+    border: none;
+
+    .ui-menuitem-link .ui-menuitem-text {
+        color: $light-color !important;
+    }
+
+    .ui-menuitem-link-active {
+        background-color: lighten($primary-color, $amount: 20) !important;
+    }
+
+    .ui-menuitem-link:not(.ui-state-disabled):hover {
+        background-color: darken($color: $primary-color, $amount: 20);
+    }
+}
+
+#students-table {
+    tr:hover {
+        background-color: $primary-color;
+    }
+
+    .selected {
+        background-color: darken($primary-color, 10);
+    }
 }

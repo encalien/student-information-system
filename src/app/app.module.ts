@@ -19,6 +19,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { ListboxModule } from 'primeng/listbox';
 import { InputMaskModule } from 'primeng/inputmask';
 import { PasswordModule } from 'primeng/password';
+import { MenubarModule } from 'primeng/menubar';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { PasswordModule } from 'primeng/password';
     InputNumberModule,
     ListboxModule,
     InputMaskModule,
-    PasswordModule
+    PasswordModule,
+    MenubarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

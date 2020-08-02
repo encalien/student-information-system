@@ -3,7 +3,7 @@
     <!-- <p-button label="Go Back" styleClass="ui-button-secondary"></p-button> -->
 </div>
 
-<p-table [columns]="columns" [value]="listedStudents" [lazy]="true" (onLazyLoad)="lazyLoadStudents($event)" [paginator]="true" 
+<p-table id="students-table" [columns]="columns" [value]="listedStudents" [lazy]="true" (onLazyLoad)="lazyLoadStudents($event)" [paginator]="true" 
     [rows]="10" [totalRecords]="totalRecords" [loading]="loading">
     <ng-template pTemplate="header" let-columns>
         <tr>

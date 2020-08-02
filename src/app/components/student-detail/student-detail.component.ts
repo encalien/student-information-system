@@ -20,7 +20,7 @@ interface Course {
 })
 
 export class StudentDetailComponent implements OnInit {
-  courses: SelectItem[];
+  availableCourses: Course[];
   enrolledCourses: Course[];
 
   @Input()
@@ -32,14 +32,14 @@ export class StudentDetailComponent implements OnInit {
     private location: Location,
     private authService: AuthenticationService,
     private router: Router) {
-      this.courses = [
-        { label: "Computer Science 101", value: {name: "Computer Science 101", code: 'CS101', year: 1} },
-        { label: "Intro to Databases", value: {name: "Intro to Databases", code: 'ID', year: 2} },
-        { label: "Algorithms and Data Types", value: {name: "Algorithms and Data Types", code: 'ADT', year: 1} },
-        { label: "Programming Practicum", value: {name: "Programming Practicum", code: 'PP', year: 1} },
-        { label: "Machine Learning", value: {name: "Machine Learning", code: 'ML', year: 3} }
+      this.availableCourses = [
+        {name: "Computer Science 101", code: 'CS101', year: 1},
+        {name: "Intro to Databases", code: 'ID', year: 2},
+        {name: "Algorithms and Data Types", code: 'ADT', year: 1},
+        {name: "Programming Practicum", code: 'PP', year: 1},
+        {name: "Machine Learning", code: 'ML', year: 3}
       ];
-  }
+    }
 
   ngOnInit(): void {
     if (!this.authService.isLoggedIn()) {
