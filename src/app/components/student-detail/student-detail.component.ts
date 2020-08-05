@@ -17,6 +17,7 @@ import { CourseService } from 'src/app/services/course.service'
 export class StudentDetailComponent implements OnInit {
   availableCourses: Course[];
   enrolledCourses: Course[];
+  enrolledCoursesChanged: boolean;
   student: Student;
 
   constructor(
@@ -51,15 +52,25 @@ export class StudentDetailComponent implements OnInit {
             return course.id.toString() === id;
           });
         })
-        console.log("----")
-        console.log(this.enrolledCourses)
       });
   }
 
-  deleteStudent(): void {
+  onDelete(): void {
     this.studentService.deleteStudent(this.student.id).subscribe(student => {
       this.router.navigate(['overview']);
     });
+  }
+
+  onSubmit(): void {
+    this.student.enrolledCourseIds = this.enrolledCourses.map(course => course.id);
+    this.studentService.updateStudent(this.student).subscribe(student => {
+      console.log(student);
+      this.router.navigate(['overview']);
+    });
+  }
+
+  onChange(): void {
+    this.enrolledCoursesChanged = true;
   }
 
   goBack(): void {

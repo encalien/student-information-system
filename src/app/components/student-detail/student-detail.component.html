@@ -15,8 +15,15 @@
             [checkbox]="true" 
             [filter]="true" 
             optionLabel="name"
-            class="full-width form-group">
+            class="full-width form-group"
+            (onChange)="onChange()">
         </p-listbox>
     </div>
-    <p-button label="Delete Student" (click)="deleteStudent()" styleClass="ui-button-danger"></p-button>
+    <p-button label="Delete Student" (click)="onDelete()" styleClass="ui-button-danger"></p-button>
+    <p-button 
+        label="Save Changes" 
+        (click)="onSubmit()" 
+        styleClass="ui-button-success" 
+        [disabled]="!enrolledCoursesChanged">
+    </p-button>
 </div>

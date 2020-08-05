@@ -46,6 +46,10 @@ export class StudentService {
     return this.http.post(this.ROOT_URL + "/students", student);
   }
 
+  updateStudent(student: Student): Observable<any> {
+    return this.http.put(this.ROOT_URL + "/students/" + student.id, student);
+  }
+
   deleteStudent(id: string) {
     return this.http.delete(this.ROOT_URL + "/students/" + id);
   }
