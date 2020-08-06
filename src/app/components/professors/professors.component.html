@@ -4,8 +4,16 @@
         <!-- <p-button label="Go Back" styleClass="ui-button-secondary"></p-button> -->
     </div>
     
-    <p-table id="professors-table" [columns]="columns" [value]="listedProfessors" [lazy]="true" (onLazyLoad)="lazyLoadProfessors($event)" [paginator]="true" 
-        [rows]="20" [totalRecords]="totalRecords" [loading]="loading">
+    <p-table 
+        id="professors-table" 
+        [columns]="columns" 
+        [value]="listedProfessors" 
+        [lazy]="true" 
+        (onLazyLoad)="lazyLoadProfessors($event)" 
+        [paginator]="true" 
+        [rows]="20" 
+        [totalRecords]="totalRecords" 
+        [loading]="loading">
         <ng-template pTemplate="header" let-columns>
             <tr>
                 <th *ngFor="let col of columns">
@@ -13,10 +21,10 @@
                 </th>
             </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-student let-columns="columns">
-            <tr (click)="onSelect(professor)" [class.selected]="professor === selectedProfessor">
+        <ng-template pTemplate="body" let-professor let-columns="columns">
+            <tr>
                 <td *ngFor="let col of columns">
-                    {{student[col.field]}}
+                        {{professor[col.field]}}
                 </td>
             </tr>
         </ng-template>
