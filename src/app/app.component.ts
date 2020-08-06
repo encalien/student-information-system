@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from './services/authentication.service'
-import {MenuItem} from 'primeng/api';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-root',

@@ -36,7 +36,7 @@ export class StudentService {
       studyYear: number, 
       courses: Course[]
     ): Observable<any> {
-    let newId = (this.lastStudent.id + 1).toString();
+    let newId = (Number(this.lastStudent.id) + 1).toString();
     let newStudentId = this.generateId();
     let enrolledCourseIds = courses.map(course => course.id);
 

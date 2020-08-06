@@ -23,6 +23,8 @@ import { InputMaskModule } from 'primeng/inputmask';
 import { PasswordModule } from 'primeng/password';
 import { MenubarModule } from 'primeng/menubar';
 import { DialogModule } from 'primeng/dialog';
+import { CalendarModule } from 'primeng/calendar';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { DialogModule } from 'primeng/dialog';
     InputMaskModule,
     PasswordModule,
     MenubarModule,
-    DialogModule
+    DialogModule,
+    CalendarModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]
