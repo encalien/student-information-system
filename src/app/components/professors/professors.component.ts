@@ -67,7 +67,7 @@ export class ProfessorsComponent implements OnInit {
     this.columns = [
       { field: 'firstName', header: 'First Name' },
       { field: 'lastName', header: 'Last Name' },
-      { field: 'taughtCourseIds', subfield: 'courseName', header: 'Teaching Courses' },
+      { field: 'taughtCourseIds', header: 'Teaching Courses' },
     ];
   }
 
@@ -82,7 +82,4 @@ export class ProfessorsComponent implements OnInit {
       }
     }, 1000);  
   }
-
-
-
 }

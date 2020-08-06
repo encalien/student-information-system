@@ -1,6 +1,8 @@
 export class Professor {
-    id: string;
-    firstName: string;
-    lastName: string;
-    taughtCourseIds: number[];
+  constructor(
+    public id: string,
+    public firstName: string,
+    public lastName: string,
+    public taughtCourseIds: number[],
+  ) { }
 }
