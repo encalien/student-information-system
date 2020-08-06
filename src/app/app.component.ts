@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.links = [
       { label: 'Student Overview', routerLink: "/overview"},
+      { label: 'Professor Overview', routerLink: "/professors"},
       { label: 'Add Student', routerLink: "/students/new"},
       { label: 'Log In', routerLink: "/login"},
       { label: 'Log Out', command: () => this.logout() },

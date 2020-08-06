@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { StudentDetailComponent } from './components/student-detail/student-detail.component';
 import { StudentFormComponent } from './components/student-form/student-form.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProfessorsComponent } from './components/professors/professors.component';
 
 import { StudentsModule } from './components/students/students.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -26,7 +27,8 @@ import { MenubarModule } from 'primeng/menubar';
     AppComponent,
     StudentDetailComponent,
     StudentFormComponent,
-    LoginComponent
+    LoginComponent,
+    ProfessorsComponent
   ],
   imports: [
     StudentsModule,

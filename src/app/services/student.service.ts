@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 import { Course } from '../models/course';
 import { Student } from '../models/student';
 import { HttpClient } from '@angular/common/http';
-import { CourseService } from 'src/app/services/course.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +14,7 @@ export class StudentService {
 
   ROOT_URL = "http://localhost:3000";
 
-  constructor(private http: HttpClient, private courseService: CourseService) { 
+  constructor(private http: HttpClient) { 
     this.fibonacciSeq = this.generateFibonacciSequence();
     this.fetchStudents().subscribe(allStudents => {
       this.lastStudent = allStudents[allStudents.length - 1]
@@ -24,7 +23,7 @@ export class StudentService {
 
   fetchStudents(): Observable<any> {
     return this.http.get(this.ROOT_URL + "/students");
-  }
+  } 
 
   fetchStudent(id: string): Observable<any> {
     return this.http.get(this.ROOT_URL + "/students/" + id);
