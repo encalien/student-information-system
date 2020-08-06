@@ -13,7 +13,7 @@
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-student let-columns="columns">
-        <tr (click)="onSelect(student)" [class.selected]="student === selectedStudent">
+        <tr class="datarow" (click)="onSelect(student)" [class.selected]="student === selectedStudent">
             <td *ngFor="let col of columns">
                 {{student[col.field]}}
             </td>

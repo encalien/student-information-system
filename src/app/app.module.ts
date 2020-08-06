@@ -8,6 +8,7 @@ import { StudentDetailComponent } from './components/student-detail/student-deta
 import { StudentFormComponent } from './components/student-form/student-form.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfessorsComponent } from './components/professors/professors.component';
+import { CoursesComponent } from './components/courses/courses.component';
 
 import { StudentsModule } from './components/students/students.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -21,7 +22,7 @@ import { ListboxModule } from 'primeng/listbox';
 import { InputMaskModule } from 'primeng/inputmask';
 import { PasswordModule } from 'primeng/password';
 import { MenubarModule } from 'primeng/menubar';
-import { CoursesComponent } from './components/courses/courses.component';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { CoursesComponent } from './components/courses/courses.component';
     ListboxModule,
     InputMaskModule,
     PasswordModule,
-    MenubarModule
+    MenubarModule,
+    DialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

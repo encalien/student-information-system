@@ -48,9 +48,10 @@ body .ui-menubar {
     }
 }
 
-#students-table {
-    tr:hover {
+#students-table, #courses-table {
+    .datarow:hover {
         background-color: $primary-color;
+        cursor: pointer;
     }
 
     .selected {
