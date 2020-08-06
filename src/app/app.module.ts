@@ -21,6 +21,7 @@ import { ListboxModule } from 'primeng/listbox';
 import { InputMaskModule } from 'primeng/inputmask';
 import { PasswordModule } from 'primeng/password';
 import { MenubarModule } from 'primeng/menubar';
+import { CoursesComponent } from './components/courses/courses.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MenubarModule } from 'primeng/menubar';
     StudentDetailComponent,
     StudentFormComponent,
     LoginComponent,
-    ProfessorsComponent
+    ProfessorsComponent,
+    CoursesComponent
   ],
   imports: [
     StudentsModule,

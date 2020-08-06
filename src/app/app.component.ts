@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
     this.links = [
       { label: 'Student Overview', routerLink: "/overview"},
       { label: 'Professor Overview', routerLink: "/professors"},
+      { label: 'Course Overview', routerLink: "/courses"},
       { label: 'Add Student', routerLink: "/students/new"},
       { label: 'Log In', routerLink: "/login"},
       { label: 'Log Out', command: () => this.logout() },
